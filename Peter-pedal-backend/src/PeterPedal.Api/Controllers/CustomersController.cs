@@ -19,7 +19,7 @@ public class CustomersController : ControllerBase
 
     [HttpGet("{id}")]
     public async Task<ActionResult<Customer>> GetById(int id)
-    {
+    { 
         var customer = await _db.Customers.FindAsync(id);
         if (customer is null)
         {
@@ -59,7 +59,7 @@ public class CustomersController : ControllerBase
         if (customer is null)
         {
             return NotFound();
-        }
+        } 
         _db.Customers.Remove(customer);
         await _db.SaveChangesAsync();
         return NoContent();
